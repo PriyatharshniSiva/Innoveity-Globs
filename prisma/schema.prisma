@@ -1,0 +1,133 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model KnowledgeArticle {
+  id         Int      @id @default(autoincrement())
+  title      String   @db.VarChar(255)
+  desc       String   @db.Text
+  image      String   @db.VarChar(500)
+  level      String   @db.VarChar(100)
+  nextBatch  String   @db.VarChar(100)
+  instructor String   @db.VarChar(255)
+  videoUrl   String?  @db.VarChar(500)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Course {
+  id               Int      @id @default(autoincrement())
+  title            String   @db.VarChar(255)
+  desc             String   @db.Text
+  duration         String   @db.VarChar(100)
+  mode             String   @db.VarChar(100)
+  image            String   @db.VarChar(500)
+  rating           String   @db.VarChar(50)
+  studentsEnrolled String   @db.VarChar(100)
+  level            String   @db.VarChar(100)
+  nextBatch        String   @db.VarChar(100)
+  instructor       String   @db.VarChar(255)
+  features         String   @db.Text
+  certification    String   @db.Text
+  videoUrl         String?  @db.VarChar(500)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model CaseStudy {
+  id          Int      @id @default(autoincrement())
+  type        String   @db.VarChar(100)
+  title       String   @db.VarChar(255)
+  challenge   String   @db.Text
+  solution    String   @db.Text
+  quote       String   @db.Text
+  quoteAuthor String   @db.VarChar(255)
+  results     String   @db.Text
+  videoId     String   @db.VarChar(100)
+  accentColor String   @db.VarChar(50)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Testimonial {
+  id        Int      @id @default(autoincrement())
+  quote     String   @db.Text
+  author    String   @db.VarChar(255)
+  page      String   @default("case-studies") @db.VarChar(100)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique @db.VarChar(191)
+  password  String   @db.VarChar(255)
+  name      String?  @db.VarChar(255)
+  createdAt DateTime @default(now())
+}
+
+model AboutContent {
+  id          Int      @id @default(1)
+  contentJson String   @db.LongText
+  updatedAt   DateTime @updatedAt
+}
+
+model HomeContent {
+  id          Int      @id @default(1)
+  contentJson String   @db.LongText
+  updatedAt   DateTime @updatedAt
+}
+
+model ServicesContent {
+  id          Int      @id @default(1)
+  contentJson String   @db.LongText
+  updatedAt   DateTime @updatedAt
+}
+
+model CSRContent {
+  id          Int      @id @default(1)
+  contentJson String   @db.LongText
+  updatedAt   DateTime @updatedAt
+}
+
+model ContactContent {
+  id          Int      @id @default(1)
+  contentJson String   @db.LongText
+  updatedAt   DateTime @updatedAt
+}
+
+model ThemeSettings {
+  id          Int      @id @default(1)
+  contentJson String   @db.LongText
+  updatedAt   DateTime @updatedAt
+}
+
+model SeoSettings {
+  id            Int      @id @default(autoincrement())
+  page          String   @unique @db.VarChar(100)
+  title         String?  @db.VarChar(255)
+  description   String?  @db.Text
+  canonicalUrl  String?  @db.VarChar(500)
+  ogTitle       String?  @db.VarChar(255)
+  ogDescription String?  @db.Text
+  ogImage       String?  @db.VarChar(500)
+  indexPage     Boolean  @default(true)
+  followLinks   Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model GlobalSeoSettings {
+  id                 Int      @id @default(1)
+  websiteName        String?  @db.VarChar(255)
+  defaultTitle       String?  @db.VarChar(255)
+  defaultDescription String?  @db.Text
+  defaultOgImage     String?  @db.VarChar(500)
+  organizationLogo   String?  @db.VarChar(500)
+  updatedAt          DateTime @updatedAt
+}

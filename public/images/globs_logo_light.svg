@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" fill="none">
+  <defs>
+    <!-- 'i' icon stem gradient (light mode) -->
+    <linearGradient id="iStemLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#10B981" />
+      <stop offset="60%" stopColor="#0D9488" />
+      <stop offset="100%" stopColor="#0284C7" />
+    </linearGradient>
+
+    <!-- Globe sphere radial gradient -->
+    <radialGradient id="globeGrad" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stopColor="#34D399" />
+      <stop offset="45%" stopColor="#0D9488" />
+      <stop offset="90%" stopColor="#047857" />
+      <stop offset="100%" stopColor="#064E3B" />
+    </radialGradient>
+  </defs>
+
+  <!-- Stylized 'i' icon -->
+  <!-- Top green dot -->
+  <circle cx="16" cy="16" r="6" fill="#10B981" />
+  <!-- Stem -->
+  <path d="M10 26 H22 V46 L10 58 Z" fill="url(#iStemLight)" />
+
+  <!-- Main word INNOVEITY -->
+  <!-- INN -->
+  <text x="36" y="44" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="900" fill="#0B2545" letter-spacing="-0.5">INN</text>
+
+  <!-- Letter O as Globe Sphere -->
+  <g transform="translate(101, 23)">
+    <!-- Outer circle ring -->
+    <circle cx="11.5" cy="11.5" r="10" stroke="#0B2545" stroke-width="3" fill="none" />
+    <!-- Inner globe sphere -->
+    <circle cx="11.5" cy="11.5" r="7.5" fill="url(#globeGrad)" />
+    <!-- Continents / swirls -->
+    <path d="M7 9 Q10 7 13 10 T16 9" stroke="#FFFFFF" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.6" />
+    <path d="M8 13.5 Q11 15.5 14 12.5" stroke="#FFFFFF" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.45" />
+    <!-- Top-right highlight -->
+    <ellipse cx="14" cy="8.5" rx="2" ry="1.4" fill="#A7F3D0" opacity="0.95" />
+  </g>
+
+  <!-- VEITY -->
+  <text x="128" y="44" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="900" fill="#0B2545" letter-spacing="-0.5">VEITY</text>
+  <!-- Registered symbol -->
+  <text x="216" y="27" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#0B2545">®</text>
+
+  <!-- GLOBS PRIVATE LIMITED -->
+  <text x="37" y="58" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="800" fill="#003B66" letter-spacing="2.8">GLOBS PRIVATE LIMITED</text>
+
+  <!-- Sustainable Knowledge Partner -->
+  <text x="37" y="73" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" font-weight="600" fill="#006699" letter-spacing="0.2">Sustainable Knowledge Partner</text>
+</svg>

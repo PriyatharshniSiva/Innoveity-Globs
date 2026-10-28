@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Hide Next.js dev tools and route announcer for a cleaner view */
+nextjs-portal, #nextjs-dev-indicator, #next-route-announcer {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+@theme {
+  --color-primary: var(--color-brand-primary, #0F766E);
+  --color-secondary: var(--color-brand-secondary, #0B2545);
+  --color-accent: var(--color-brand-accent, #10B981);
+  --color-success: var(--color-success, #059669);
+  --color-warning: var(--color-warning, #F59E0B);
+  --color-background: var(--background, #FFFFFF);
+  --color-foreground: var(--foreground, #0F172A);
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-inter), Georgia, serif;
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #0F172A;
+  --heading: #0B2545;
+  --color-brand-primary: #0F766E;
+  --color-brand-secondary: #0B2545;
+  --color-brand-accent: #10B981;
+  --color-success: #059669;
+  --color-warning: #F59E0B;
+}
+
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--heading);
+  }
+}
+
+/* Custom Scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #94A3B8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #185D46;
+}
+
+/* Eduka Layout Utilities */
+.eduka-card {
+  @apply bg-white rounded-xl shadow-md border border-slate-100 hover:shadow-xl transition-all duration-300;
+}
+
+.eduka-btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-medium rounded hover:bg-primary/90 transition-colors duration-300;
+}
+
+.eduka-btn-secondary {
+  @apply inline-flex items-center justify-center px-6 py-3 bg-secondary text-white font-medium rounded hover:bg-secondary/90 transition-colors duration-300;
+}
